@@ -28,7 +28,9 @@ def execute_code(code: str):
         result = local_vars.get("result", None)
 
         if isinstance(result, (pd.Series, pd.DataFrame)):
-            result = "\n".join([f"{k}: {v}" for k, v in result.items()])
+            result = result.to_string(index=True)
+        elif isinstance(result, pd.DataFrame):
+            result = result.to_string(index=False)
 
 # If result is a tuple (like from plt.hist), ignore it
         if isinstance(result, tuple):
@@ -59,4 +61,5 @@ def execute_code(code: str):
             "image": None
 
         }
+
 
