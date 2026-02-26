@@ -2,9 +2,7 @@ import streamlit as st
 import requests
 import base64
 
-# ----------------------------
-# CONFIG
-# ----------------------------
+
 
 BACKEND_URL = "https://titanic-chat-agent-backend.onrender.com/"  
 
@@ -17,16 +15,10 @@ st.set_page_config(
 st.title("🚢 Titanic AI Data Analyst")
 st.markdown("Ask questions about the Titanic dataset in natural language.")
 
-# ----------------------------
-# SESSION STATE
-# ----------------------------
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# ----------------------------
-# USER INPUT
-# ----------------------------
 
 st.markdown("### Try asking:")
 st.markdown("- What percentage of passengers survived?")
@@ -89,4 +81,5 @@ if st.sidebar.button("Clear Chat"):
     st.session_state.chat_history = []
 
     st.rerun()
+
 
