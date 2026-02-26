@@ -1,10 +1,19 @@
-from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from app.config import settings
+import os
+from app.config import Settings
 from app.services.data_loader import DataLoader
+from dotenv import load_dotenv
 
-llm = ChatOllama(model=settings.MODEL_NAME, temperature=0)
+load_dotenv()
 
+
+llm = ChatOpenAI(
+    model=Settings.MODEL_NAME,
+    base_url="https://api.groq.com/openai/v1",
+    api_key=os.getenv("GROQ_API_KEY"),
+    temperature=0
+)
 def generate_code(question: str):
 
     df = DataLoader.get_dataframe()
