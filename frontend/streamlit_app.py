@@ -6,7 +6,7 @@ import base64
 # CONFIG
 # ----------------------------
 
-BACKEND_URL = "http://127.0.0.1:8000/chat"  # change when deploying
+BACKEND_URL = "https://titanic-chat-agent-backend.onrender.com/"  # change when deploying
 
 st.set_page_config(
     page_title="Titanic AI Data Analyst",
@@ -87,4 +87,5 @@ for message in st.session_state.chat_history:
                 )
 if st.sidebar.button("Clear Chat"):
     st.session_state.chat_history = []
+
     st.rerun()
