@@ -1,18 +1,20 @@
-🚢 Titanic AI Data Analyst
+# 🚢 Titanic AI Data Analyst
 
 A full-stack AI-powered chatbot that analyzes the Titanic dataset using natural language.
 
-Built using:
+---
+## Built using:
 
-FastAPI (Backend)
+### FastAPI (Backend)
 
-LangChain (LLM integration)
+### LangChain (LLM integration)
 
-Streamlit (Frontend UI)
+### Streamlit (Frontend UI)
 
-Matplotlib (Dynamic visualizations)
-
-🏗️ Architecture
+### Matplotlib (Dynamic visualizations)
+---
+## 🏗️ Architecture
+```
 Streamlit (UI)
       ↓
 FastAPI (REST API)
@@ -22,71 +24,75 @@ LangChain (LLM Prompt Chain)
 Controlled Python Execution Engine
       ↓
 Titanic Dataset (Pandas DataFrame)
-💡 Design Decisions
-1. Controlled Code Generation Instead of Autonomous Agents
+```
+---
+## 💡 Design Decisions
+### 1. Controlled Code Generation Instead of Autonomous Agents
 
 Instead of relying on ReAct tool-calling agents (which can be unstable and unpredictable), this project uses:
 
-Structured prompt-based Python code generation
+- Structured prompt-based Python code generation
 
-Deterministic execution engine
+- Deterministic execution engine
 
-Schema-aware column injection
+- Schema-aware column injection
 
-Strict execution constraints
+- Strict execution constraints
 
-This ensures:
+### This ensures:
 
-Reproducibility
+- Reproducibility
 
-Stability
+- Stability
 
-No hallucinated dataset values
+- No hallucinated dataset values
 
-Reliable visualization generation
+- Reliable visualization generation
 
-2. Schema-Aware Prompting
+
+
+### 2. Schema-Aware Prompting
 
 The model is explicitly provided with:
 
-Exact dataframe column names
+- Exact dataframe column names
 
-Case-sensitive enforcement
+- Case-sensitive enforcement
 
-Execution constraints
+- Execution constraints
 
 This prevents column mismatch errors (e.g., fare vs Fare).
 
-3. Safe Execution Layer
+### 3. Safe Execution Layer
 
 The executor:
 
-Prevents CSV reloading
+- Prevents CSV reloading
 
-Rejects dangerous imports
+- Rejects dangerous imports
 
-Handles tuple-return plots
+- Handles tuple-return plots
 
-Rounds numeric outputs
+- Rounds numeric outputs
 
-Captures matplotlib figures safely
+- Captures matplotlib figures safely
 
-✨ Features
+## ✨ Features
 
-Natural language data analysis
+- Natural language data analysis
 
-Automatic statistical computation
+- Automatic statistical computation
 
-Dynamic histogram & bar plots
+- Dynamic histogram & bar plots
 
-Clean chat-style interface
+- Clean chat-style interface
 
-Persistent conversation history
+- Persistent conversation history
 
-Deployment-ready structure
+- Deployment-ready structure
 
-📊 Example Queries
-
+## 📊 Example Queries
+```
 What is the average ticket fare?
 
 Show histogram of passenger ages
@@ -94,20 +100,26 @@ Show histogram of passenger ages
 How many passengers embarked from each port?
 
 What percentage of passengers survived?
+```
 
-⚙️ Running Locally
-Backend
+## ⚙️ Running Locally
+### Backend
+```
 cd backend
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-Frontend
+```
+### Frontend
+```
 cd frontend
 pip install -r requirements.txt
 streamlit run streamlit_app.py
-🚀 Deployment Strategy
+```
+## 🚀 Deployment Strategy
 
-Backend deployed on Render
+- Backend deployed on Render
 
-Frontend deployed on Streamlit Cloud
+- Frontend deployed on Streamlit Cloud
 
-Dataset stored within repository
+
+- Dataset stored within repository
