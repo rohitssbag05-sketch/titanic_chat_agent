@@ -19,6 +19,10 @@ def execute_code(code: str):
         "answer": "Execution Error: Direct file loading is not allowed.",
         "image": None
     }
+        # Remove markdown code fences
+        if "```" in code:
+            code = code.split("```")[1]
+            code = code.replace("python", "").strip()
         exec(code, {}, local_vars)
 
         result = local_vars.get("result", None)
@@ -53,4 +57,5 @@ def execute_code(code: str):
         return {
             "answer": f"Execution Error: {str(e)}",
             "image": None
+
         }
